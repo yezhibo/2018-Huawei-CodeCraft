@@ -1,0 +1,346 @@
+
+
+1. 袋鼠基因的载体
+<span style="font-size:18px;"></pre><pre name="code" class="cpp">class Genome    
+{    
+public:    
+    
+     friend class GenAlg;    
+     friend class GenEngine;    
+    
+     Genome():fitness(0){}    
+            
+     Genome(vector <double> vec, double f): vecGenome(vec), fitness(f){}  //类的带参数初始化参数。    
+private:    
+     vector <double> vecGenome;  // 装载基因的容器    
+        
+     double fitness; //适应度    
+    
+};  </span>  
+
+
+2.适应度函数，即每个基因对应的适应度
+
+
+
+3.轮盘赌选择函数
+<span style="font-size:18px;">Genome GenAlg:: GetChromoRoulette()    
+    
+{    
+    
+    //产生一个0到人口总适应性评分总和之间的随机数.    
+    
+    //中m_dTotalFitness记录了整个种群的适应性分数总和)    
+    
+    double Slice = (random()) * totalFitness;    
+    
+    //这个基因将承载转盘所选出来的那个个体.    
+    
+    Genome TheChosenOne;    
+    
+    //累计适应性分数的和.    
+    
+    double FitnessSoFar = 0;    
+    
+    //遍历总人口里面的每一条染色体。    
+    
+    for (int i=0; i<popSize; ++i)    
+    
+    {    
+    
+        //累计适应性分数.    
+    
+        FitnessSoFar += vecPop[i].fitness;    
+    
+        //如果累计分数大于随机数,就选择此时的基因.    
+    
+        if (FitnessSoFar >= Slice)    
+    
+        {    
+    
+            TheChosenOne = vecPop[i];    
+    
+            break;    
+    
+        }    
+    
+    }    
+    
+    //返回转盘选出来的个体基因    
+    
+    return TheChosenOne;    
+    
+}  </span> 
+
+
+
+4. 针对浮点型编码的基因突变函数
+<span style="font-size:18px;">void GenAlg::Mutate(vector<double> &chromo)    
+{       
+    
+    //遵循预定的突变概率,对基因进行突变    
+    
+    for (int i=0; i<chromo.size(); ++i)    
+    
+    {    
+    
+        //如果发生突变的话    
+    
+        if (random() < mutationRate)    
+    
+        {    
+    
+            //使该权值增加或者减少一个很小的随机数值    
+    
+            chromo[i] += ((random()-0.5) * maxPerturbation);    
+    
+            //保证袋鼠不至于跳出自然保护区.    
+    
+            if(chromo[i] < leftPoint)    
+    
+            {    
+    
+                chromo[i] = rightPoint;    
+    
+            }    
+    
+            else if(chromo[i] > rightPoint)    
+    
+            {    
+    
+                chromo[i] = leftPoint;    
+    
+            }    
+    
+            //以上代码非基因变异的一般性代码只是用来保证基因编码的可行性。    
+    
+        }    
+    
+    
+    }    
+}  </span>  
+
+
+5. 遗传算法的引擎---GenAlg
+<span style="font-size:18px;"><span style="font-size:16px;">/遗传算法    
+class GenAlg        
+    {    
+        
+    public:    
+        
+    //这个容器将储存每一个个体的染色体    
+        
+    vector <Genome>    vecPop;    
+        
+    //人口(种群)数量    
+        
+    int popSize;    
+        
+    //每一条染色体的基因的总数目    
+        
+    int chromoLength;    
+        
+    //所有个体对应的适应性评分的总和    
+        
+    double totalFitness;    
+        
+    //在所有个体当中最适应的个体的适应性评分    
+        
+    double bestFitness;    
+        
+    //所有个体的适应性评分的平均值    
+        
+    double averageFitness;    
+        
+    //在所有个体当中最不适应的个体的适应性评分    
+        
+    double worstFitness;    
+        
+    //最适应的个体在m_vecPop容器里面的索引号    
+        
+    Genome fittestGenome;    
+        
+    //基因突变的概率,一般介于0.05和0.3之间    
+        
+    double mutationRate;    
+        
+    //基因交叉的概率一般设为0.7    
+        
+    double crossoverRate;    
+        
+    //代数的记数器    
+        
+    int generation;    
+    
+    //最大变异步长    
+    
+    double maxPerturbation;    
+    
+    double leftPoint;    
+    
+    double rightPoint;    
+        
+    //构造函数    
+        
+    GenAlg();    
+        
+    //初始化变量    
+        
+    void Reset();    
+        
+    //初始化函数    
+    
+    void init(int popsize, double MutRate, double CrossRate, int GenLenght,double LeftPoint,double RightPoint);    
+        
+    //计算TotalFitness, BestFitness, WorstFitness, AverageFitness等变量    
+        
+    void CalculateBestWorstAvTot();    
+        
+    //轮盘赌选择函数    
+        
+    Genome GetChromoRoulette();    
+    
+    
+    //基因变异函数    
+        
+    void Mutate(vector<double> &chromo);    
+        
+    //这函数产生新一代基因    
+        
+    void Epoch(vector<Genome> &vecNewPop);    
+        
+    Genome GetBestFitness();    
+    
+    double GetAverageFitness();    
+    };</span>  </span>  
+
+
+6. 初始化函数
+    <span style="font-size:18px;">void GenAlg::init(int popsize, double MutRate, double CrossRate, int GenLenght,double LeftPoint,double RightPoint)    
+    
+{    
+    
+    popSize = popsize;    
+    
+    mutationRate = MutRate;    
+    
+    crossoverRate = CrossRate;    
+    
+    chromoLength = GenLenght;    
+    
+    totalFitness = 0;    
+    
+    generation = 0;    
+    
+    //fittestGenome = 0;    
+    
+    bestFitness = 0.0;    
+    
+    worstFitness = 99999999;    
+    
+    averageFitness = 0;    
+    
+    maxPerturbation=0.004;    
+    
+    leftPoint=LeftPoint;    
+    
+    rightPoint=RightPoint;    
+    
+    //清空种群容器，以初始化    
+    
+    vecPop.clear();    
+    
+    for (int i=0; i<popSize; i++)    
+    
+    {         
+    
+        //类的构造函数已经把适应性评分初始化为0    
+    
+        vecPop.push_back(Genome());    
+    
+        //把所有的基因编码初始化为函数区间内的随机数。    
+    
+        for (int j=0; j<chromoLength; j++)    
+    
+        {    
+                
+            vecPop[i].vecGenome.push_back(random() *     
+    
+                (rightPoint - leftPoint) + leftPoint);    
+    
+        }    
+    
+    }    
+    
+}  </span>  
+
+
+
+<span style="font-size:18px;">void GenEngine:: OnStartGenAlg()    
+        
+{    
+        
+    
+    //产生随机数    
+    
+    srand( (unsigned)time( NULL ) );    
+    
+    //初始化遗传算法引擎    
+    
+    genAlg.init(g_popsize, g_dMutationRate, g_dCrossoverRate, g_numGen,g_LeftPoint,g_RightPoint);    
+    
+    //清空种群容器    
+    
+    m_population.clear();    
+    
+    //种群容器装进经过随机初始化的种群    
+    
+    m_population = genAlg.vecPop;    
+    
+    //定义两个容器，以装进函数的输入与及输出（我们这个函数是单输入单输出的，但是以后往往不会那么简单，所以我们这里先做好这样的准备。）    
+    
+    vector <double> input;    
+    double output;    
+    
+    input.push_back(0);    
+    
+    for(int Generation = 0;Generation <= g_Generation;Generation++)    
+    
+    {    
+    
+        //里面是对每一条染色体进行操作    
+    
+        for(int i=0;i<g_popsize;i++)    
+    
+        {    
+    
+            input = m_population[i].vecGenome;    
+    
+            //为每一个个体做适应性评价，如之前说的，评价分数就是函数值。其    
+    
+            //Function函数的作用是输入自变量返回函数值，读者可以参考其代码。    
+    
+            output = (double)curve.function(input);    
+            
+            m_population[i].fitness = output;    
+    
+        }    
+    
+        //由父代种群进化出子代种群（长江后浪退前浪。）    
+    
+        genAlg.Epoch(m_population);    
+    
+            
+        //if(genAlg.GetBestFitness().fitness>=bestFitness)    
+        bestSearch=genAlg.GetBestFitness().vecGenome[0];    
+        bestFitness=genAlg.GetBestFitness().fitness;    
+        averageFitness=genAlg.GetAverageFitness();    
+        //cout<<bestSearch<<endl;    
+        report(Generation+1);    
+    }    
+    
+    //return bestSearch;    
+    
+}  </span>  
+
+
