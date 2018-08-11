@@ -1,23 +1,12 @@
 ## 赛题介绍
 #### 背景
-![image](https://github.com/yezhibo/2018-Huawei-CodeCraft/raw/master/picture/赛题描述图1.jpg)
-  
+![image](https://github.com/yezhibo/2018-Huawei-CodeCraft/raw/master/picture/赛题描述图1.jpg)  
   随着云计算技术的日益成熟，华为云平台目前也在出售云服务（虚拟机/flavor），虚拟机分为多种规格，例如：
-  flavor1 1 1024
+  flavor1 1 1024  
   flavor2 1 2048
   flavor3 1 4096
   flavor4 2 2048
   flavor5 2 4096
-  flavor6 2 8192
-  flavor7 4 4096
-  flavor8 4 8192
-  flavor9 4 16384
-  flavor10 8 8192
-  flavor11 8 16384
-  flavor12 8 32768
-  flavor13 16 16384
-  flavor14 16 32768
-  flavor15 16 65536
   备注：虚拟机名称 CPU核数 内存大小（MB）
   而虚拟机是由物理服务器分割出来的，华为现在有指定规格的服务器，根据实际租户的购买情况来实时的对物理服务器进行划分。
   56 128 1200
