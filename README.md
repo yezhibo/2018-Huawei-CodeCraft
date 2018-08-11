@@ -1,5 +1,3 @@
-# 2018-Huawei-CodeCraft
-
 ## 赛题介绍
 ### 初赛
 
