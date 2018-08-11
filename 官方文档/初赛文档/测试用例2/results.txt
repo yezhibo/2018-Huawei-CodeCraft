@@ -1,0 +1,55 @@
+476
+flavor1 57
+flavor2 90
+flavor3 5
+flavor4 30
+flavor5 58
+flavor6 2
+flavor7 2
+flavor8 98
+flavor9 29
+flavor10 2
+flavor11 34
+flavor12 37
+flavor13 2
+flavor14 28
+flavor15 2
+
+37
+1 flavor9 2 flavor1 4 flavor12 2 flavor2 3 flavor11 1 flavor4 3
+2 flavor11 1 flavor14 3
+3 flavor11 3 flavor12 1 flavor14 1 flavor8 2
+4 flavor12 2 flavor11 1 flavor14 1 flavor5 2 flavor2 2 flavor4 1 flavor1 2
+5 flavor14 2 flavor12 1 flavor11 1 flavor8 1 flavor2 3 flavor1 1
+6 flavor14 3 flavor12 1
+7 flavor14 3 flavor12 1
+8 flavor11 3 flavor9 1 flavor12 1 flavor8 2 flavor5 1 flavor1 2 flavor2 4 flavor4 1
+9 flavor12 2 flavor11 3 flavor8 2
+10 flavor12 1 flavor11 3 flavor14 1 flavor9 1
+11 flavor11 4 flavor5 2 flavor14 1 flavor8 1
+12 flavor11 1 flavor2 4 flavor5 1 flavor4 2 flavor12 3
+13 flavor12 2 flavor9 1 flavor11 2 flavor13 1
+14 flavor14 1 flavor12 2 flavor8 3 flavor2 2 flavor7 1
+15 flavor8 6 flavor9 2 flavor4 2 flavor14 1 flavor2 2 flavor1 2
+16 flavor8 3 flavor9 3 flavor10 1 flavor12 1 flavor11 1
+17 flavor12 1 flavor8 10 flavor2 2 flavor4 1 flavor5 2
+18 flavor14 1 flavor9 4 flavor1 2 flavor8 3 flavor5 1 flavor4 1
+19 flavor8 7 flavor5 2 flavor14 1 flavor12 1
+20 flavor7 1 flavor14 1 flavor8 5 flavor9 1 flavor12 1 flavor5 1
+21 flavor9 4 flavor8 7 flavor4 1 flavor1 4 flavor2 1
+22 flavor9 2 flavor8 10 flavor2 1 flavor6 1 flavor5 1 flavor1 2
+23 flavor15 1 flavor8 2 flavor5 3 flavor9 2 flavor4 1 flavor1 2
+24 flavor8 5 flavor9 3 flavor4 2 flavor11 1 flavor2 7 flavor5 1 flavor1 2
+25 flavor15 1 flavor14 1 flavor8 1 flavor5 3 flavor4 3 flavor2 3
+26 flavor14 1 flavor8 2 flavor1 3 flavor2 5 flavor5 4 flavor12 1 flavor11 1
+27 flavor11 1 flavor5 6 flavor2 7 flavor4 2 flavor1 7 flavor12 1 flavor8 2 flavor6 1
+28 flavor14 1 flavor8 3 flavor1 1 flavor2 5 flavor5 3 flavor12 1 flavor11 1
+29 flavor14 1 flavor11 1 flavor12 1 flavor8 2 flavor4 2 flavor2 3 flavor1 2 flavor9 1 flavor5 1
+30 flavor10 1 flavor12 2 flavor5 3 flavor8 3 flavor2 4 flavor1 2 flavor4 3 flavor3 1
+31 flavor14 1 flavor2 4 flavor1 4 flavor8 2 flavor11 1 flavor5 3 flavor12 1 flavor4 1
+32 flavor8 3 flavor11 1 flavor14 1 flavor4 1 flavor5 1 flavor13 1
+33 flavor8 5 flavor5 3 flavor4 1 flavor2 10 flavor3 1 flavor14 1 flavor1 1
+34 flavor14 1 flavor12 2 flavor5 4 flavor8 1 flavor1 2 flavor4 1 flavor2 2
+35 flavor11 2 flavor5 3 flavor9 2 flavor2 7 flavor1 6 flavor12 1
+36 flavor12 2 flavor8 4 flavor5 4 flavor1 4 flavor2 5 flavor4 1
+37 flavor12 2 flavor8 1 flavor3 3 flavor5 3 flavor1 2 flavor2 4 flavor11 1

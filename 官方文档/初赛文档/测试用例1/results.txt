@@ -1,0 +1,40 @@
+268
+flavor1 7
+flavor2 33
+flavor3 8
+flavor4 4
+flavor5 62
+flavor6 35
+flavor7 12
+flavor8 43
+flavor9 13
+flavor10 2
+flavor11 9
+flavor12 11
+flavor13 4
+flavor14 24
+flavor15 1
+
+22
+1 flavor12 1 flavor14 3
+2 flavor14 3 flavor11 1
+3 flavor14 2 flavor15 1
+4 flavor11 4 flavor12 2
+5 flavor14 3 flavor12 1
+6 flavor12 1 flavor11 2 flavor13 1 flavor14 1
+7 flavor14 2 flavor13 1 flavor12 1
+8 flavor14 3 flavor11 1
+9 flavor14 2 flavor13 1 flavor12 1
+10 flavor12 2 flavor14 2
+11 flavor13 1 flavor11 1 flavor12 2 flavor14 1
+12 flavor14 2 flavor8 4 flavor6 2 flavor7 1
+13 flavor9 3 flavor7 4 flavor8 6 flavor6 2
+14 flavor6 7 flavor8 5 flavor9 2
+15 flavor9 2 flavor7 4 flavor6 5 flavor8 5
+16 flavor8 4 flavor10 2 flavor9 2 flavor6 6
+17 flavor9 3 flavor8 6 flavor6 4
+18 flavor8 8 flavor6 4 flavor7 3 flavor9 1
+19 flavor8 5 flavor6 5 flavor5 11 flavor2 2
+20 flavor2 7 flavor5 18 flavor1 4 flavor4 2 flavor3 5
+21 flavor1 3 flavor2 15 flavor5 17 flavor3 2 flavor4 1
+22 flavor5 16 flavor4 1 flavor3 1 flavor2 9
