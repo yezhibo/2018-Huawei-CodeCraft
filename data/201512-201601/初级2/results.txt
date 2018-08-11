@@ -1,0 +1,13 @@
+62
+flavor8 40
+flavor9 8
+flavor10 1
+flavor11 13
+
+6
+1 flavor8 4 flavor9 2 flavor11 4
+2 flavor10 1 flavor9 3 flavor8 3 flavor11 3
+3 flavor11 3 flavor8 7 flavor9 1
+4 flavor8 12 flavor11 1
+5 flavor9 2 flavor8 10 flavor11 1
+6 flavor8 4 flavor11 1

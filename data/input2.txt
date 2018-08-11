@@ -1,0 +1,13 @@
+2
+General 56 128 1200
+High-Performance 112 192 3600
+
+5
+flavor1 1 1024
+flavor2 1 2048
+flavor3 1 4096
+flavor4 2 2048
+flavor5 2 4096
+
+2016-01-08 00:00:00
+2016-01-14 23:59:59

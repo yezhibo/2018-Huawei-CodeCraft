@@ -1,0 +1,7 @@
+42
+flavor2 38
+flavor6 3
+flavor7 1
+
+1
+1 flavor7 1 flavor6 3 flavor2 38

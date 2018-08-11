@@ -1,0 +1,19 @@
+3
+General 56 128 1200
+Large-Memory 84 256 2400
+High-Performance 112 192 3600
+
+10
+flavor2 1 2048
+flavor3 1 4096
+flavor4 2 2048
+flavor5 2 4096
+flavor6 2 8192
+flavor7 4 4096
+flavor9 4 16384
+flavor10 8 8192
+flavor11 8 16384
+flavor15 16 65536
+
+2016-01-08 00:00:00
+2016-01-14 23:59:59
